@@ -1,0 +1,127 @@
+# ------------------------------------------------------------------------------
+
+# ==============================================================================
+# Publication.yml
+# ------------------------------------------------------------------------------
+#
+# This file houses the bibliographic info and general metadata for your digital
+# publication.
+
+# ------------------------------------------------------------------------------
+# The publication's base URL, i.e. 'https://www.my-publication.org'
+url: 'https://vanda.github.io/vam-publications-template/'
+
+# ------------------------------------------------------------------------------
+# Title & Description
+title: Nodes and Networks
+subtitle: 
+reading_line:
+short_title:
+
+description:
+  one_line:
+  full: "Quire is a digital publishing framework built on top of the Hugo static site
+    generator. Generate Web, PDF, and print books (with Epub coming soon) from a single set of text files."
+
+# ------------------------------------------------------------------------------
+# Publication Details
+# ------------------------------------------------------------------------------
+
+pub_date: 2022-12-01 # YYYY-MM-DD
+language: en
+pub_type: book # book | journal-periodical | other
+
+identifier:
+  isbn:
+
+publisher:
+  - name: Victoria and Albert Museum
+    location: London
+    url: "https://www.vam.ac.uk"
+    logo:
+
+# ------------------------------------------------------------------------------
+# Contributors
+# ------------------------------------------------------------------------------
+
+contributor_as_it_appears: 
+
+contributor:
+  - id: cbreward
+    type: primary
+    first_name: Christopher
+    last_name: Breward
+    title: Acting head of research
+    affiliation: Victoria and Albert Museum
+  - id: 
+    type: 
+    first_name: 
+    last_name: 
+    title: 
+    affiliation: 
+
+# ------------------------------------------------------------------------------
+# Copright & License
+# ------------------------------------------------------------------------------
+
+copyright: "© Victoria and Albert Museum"
+
+license:
+  name: Creative Commons Attribution 4.0 International License
+  abbreviation: CC BY
+  url: https://creativecommons.org/licenses/by/4.0/
+  scope: full # full | text-only | some-exceptions
+
+# ------------------------------------------------------------------------------
+# Formats, Resources & Links
+# ------------------------------------------------------------------------------
+
+resource_link:
+  #- type: other-format
+  #  name: PDF
+  #  media_type: application/pdf
+  #  link_relation: alternate
+  #  url: /_assets/downloads/pagedjs.pdf
+  - type: footer-link
+    name: About
+    link_relation: about
+    url: /about/
+  - type: footer-link
+    name: Privacy Policy
+    link_relation: privacy-policy
+    url: "https://www.vam.ac.uk/info/privacy-notice"
+  - type: footer-link
+    name: Terms of Use
+    link_relation: terms-of-service
+    url: "https://www.vam.ac.uk/info/va-terms-and-conditions"
+  - type: footer-link
+    name: Cookie Policy
+    link_relation: cookie-policy
+    url: "https://www.vam.ac.uk/info/cookie-policy"
+
+# ------------------------------------------------------------------------------
+# Subjects
+# ------------------------------------------------------------------------------
+
+subject:
+  - type:
+    name:
+    identifer:
+  - type:
+    name:
+
+# ------------------------------------------------------------------------------
+# Revision History
+# ------------------------------------------------------------------------------
+
+revision_history:
+  - date:
+    summary:
+
+repository_url:
+
+# ------------------------------------------------------------------------------
+# Promo Image
+# ------------------------------------------------------------------------------
+
+promo_image: static-cover.jpg
