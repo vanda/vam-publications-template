@@ -1,0 +1,95 @@
+name: deploy-staging
+
+run-name: ${{ github.actor }} is rebuilding the site
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+        - name: Setup Project
+          uses: actions/checkout@v4
+
+        - name: Log in
+          run: |
+               git config --global user.email "siobhanbrown559@gmail.com"
+               git config --global user.name "siobhan559"
+        
+        - name: Install Node
+          uses: actions/setup-node@v3
+          with:
+            node-version: '18'
+            #cache: 'npm'
+            #cache-dependency-path: package-lock.json
+        
+        - name: Install Quire
+          run: |
+            npm install --global @thegetty/quire-cli@1.0.0-rc.11
+
+        - name: Check Quire Version
+          run: |
+            quire --version
+        
+        - name: Setup Quire Project
+          run: |
+            quire new publication --quire-version 1.0.0-rc.16
+        
+        - name: Remove starter files
+          run: |
+            rm -rf ./publication/content/_assets/images/*  
+            rm -rf ./publication/content/_data/figures.yaml
+            rm -rf ./publication/content/_data/publication.yaml
+            rm ./publication/content/*.md
+            rm -rf ./publication/content/catalogue/
+            rm -rf ./publication/content/_assets/downloads/
+
+        - name: Replace starter files with content files
+          run: |
+            cp ./content/spiral-overlay.png ./publication/content/_assets/images/
+            cp ./content/static-cover.jpg ./publication/content/_assets/images/
+            cp ./content/figures.yaml ./publication/content/_data/
+            cp ./content/publication.yaml ./publication/content/_data/
+            cp ./content/markdown/*.md ./publication/content/
+            cp -r ./fonts/spiller ./publication/content/_assets/fonts/
+            rsync -r ./custom-theming/ ./publication/
+        
+        - name: Build new site
+          run: |
+            cd ./publication/
+            quire build
+
+        - name: Check project files
+          run: |
+            ls -la ./publication/
+
+        - name: Bypass jekyll
+          run: |
+            touch ./publication/_site/.nojekyll
+
+        - name: Log project dependencies
+          run: |
+            cat ./publication/package-lock.json > ./package-lock.json
+        
+        #- name: Save dependencies for caching
+        #  uses: EndBug/add-and-commit@v9
+        #  with:
+        #    add: './package-lock.json'
+        #    message: 'Updating node dependencies from previous build'
+
+        - name: Check website files
+          run: |
+            ls -la ./publication/_site/
+
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./publication/_site
