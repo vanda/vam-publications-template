@@ -47,11 +47,11 @@ publisher:
 contributor_as_it_appears: 
 
 contributor:
-  - id: cbreward
+  - id: jsmith
     type: primary
-    first_name: Christopher
-    last_name: Breward
-    title: Acting head of research
+    first_name: John
+    last_name: Smith
+    title: Test contributor
     affiliation: Victoria and Albert Museum
   - id: 
     type: 
