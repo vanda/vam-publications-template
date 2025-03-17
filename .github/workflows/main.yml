@@ -20,8 +20,8 @@ jobs:
 
         - name: Log in
           run: |
-               git config --global user.email "siobhanbrown559@gmail.com"
-               git config --global user.name "siobhan559"
+               git config --global user.email ${{ github.event.pusher.email }}
+               git config --global user.name ${{ github.event.pusher.name }}
         
         - name: Install Node
           uses: actions/setup-node@v3
