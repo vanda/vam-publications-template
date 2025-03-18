@@ -20,7 +20,7 @@ module.exports = async function (data) {
       ${this.head(data)}
       <body>
 
-        // add ID to end of URL if using Google analytics
+        <!-- add ID to end of URL if using Google analytics -->
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
