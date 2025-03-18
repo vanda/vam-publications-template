@@ -43,7 +43,7 @@ jobs:
         
         - name: Install Quire
           run: |
-            npm install --global @thegetty/quire-cli@1.0.0-rc.11
+            npm list -g @thegetty/quire-cli || npm install --global @thegetty/quire-cli@1.0.0-rc.11
 
         - name: Check Quire Version
           run: |
