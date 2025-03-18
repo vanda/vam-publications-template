@@ -88,12 +88,6 @@ jobs:
         - name: Log project dependencies
           run: |
             cat ./publication/package-lock.json > ./package-lock.json
-        
-        #- name: Save dependencies for caching
-        #  uses: EndBug/add-and-commit@v9
-        #  with:
-        #    add: './package-lock.json'
-        #    message: 'Updating node dependencies from previous build'
 
         - name: Check website files
           run: |
