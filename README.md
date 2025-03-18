@@ -1,1 +1,1 @@
-# vam-publications-nodes-and-networks
+# vam-publications-template
