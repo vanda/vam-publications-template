@@ -5,3 +5,9 @@ figure_list:
     caption: "*Memoriam* by Michele Walker, 2002. Plastic and steel wire wool."
     credit: Photograph © Stevel Gorton
     alt: Black rectangular artwork with fluffy edges 
+
+  - id: test-image
+    src: "test-img.jpg"
+    caption: "This is a test"
+    credit: Siobhan
+    alt: Testing 123
