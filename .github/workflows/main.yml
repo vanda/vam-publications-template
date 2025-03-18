@@ -94,7 +94,7 @@ jobs:
             ls -la ./publication/_site/
 
         - name: Deploy
-          uses: peaceiris/actions-gh-pages@4b09552702d0b65573696410d4707c765da2630b
+          uses: peaceiris/actions-gh-pages@aa83d0c2cfc3d813560e13068d3152aa21490171
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./publication/_site
